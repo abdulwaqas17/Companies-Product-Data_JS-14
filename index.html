@@ -31,13 +31,90 @@
         .Revenue{
             background-color: #a8ff97;
         }
+
+        thead{
+
+            position: sticky;
+            top: 0px;
+            left: 0px;
+            border-bottom: 1px solid black;
+            
+        }
     </style>
 </head>
 <body>
     
     <h1>Companies Data 2024</h1>
 
-    <table>
+    <table id="table1">
+
+        <!-- heading is here  -->
+        <thead>
+
+            <tr class="top">
+                <th>S No.</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Quantiy of Product's Sell</th>
+                <th>Total Revenue of Product</th>
+            </tr>
+
+        </thead>
+
+        <!-- comp1 is here  -->
+        <tbody id="comp1">
+
+                            
+            <tr class="companyName">
+
+                <th colspan="5">Samsung</th>
+                
+            </tr>
+            
+        </tbody>
+
+         <!-- comp2 is here  -->
+        <tbody id="comp2">
+
+                            
+            <tr class="companyName">
+
+                <th colspan="5">Vivo</th>
+                
+            </tr>
+
+        </tbody>
+
+         <!-- comp3 is here  -->
+        <tbody id="comp3">
+
+                            
+            <tr class="companyName">
+
+                <th colspan="5">Tecno</th>
+                
+            </tr>
+
+        </tbody>
+
+         <!-- comp4 is here  -->
+        <tbody id="comp4">
+
+                            
+            <tr class="companyName">
+
+                <th colspan="5">OPPO</th>
+                
+            </tr>
+
+        </tbody>
+
+
+    </table>
+
+
+        
+    <!-- <table>
 
         <thead>
 
@@ -54,7 +131,6 @@
         <tbody>
 
 
-            <!-- ---- company No. 1 is here ----- -->
             <div class="one">
                 
                 <tr class="companyName">
@@ -103,7 +179,7 @@
 
 
 
-            <!-- ---- company No. 2 is here ----- -->
+             ---- company No. 2 is here ----- 
             <div class="two">
 
                 <tr class="companyName">
@@ -144,7 +220,7 @@
         
         
                 <tr class="Revenue">
-                    <th colspan="4">Total Revenue Generate by <i>Samsung</i> in 2024</th>
+                    <th colspan="4">Total Revenue Generate by <i>Vivo</i> in 2024</th>
                     <th id="comp2TotalRevenue">12,59,16,000</th>
                 </tr>
 
@@ -152,7 +228,7 @@
 
 
 
-            <!-- ---- company No. 3 is here ----- -->
+            ---- company No. 3 is here ----- 
             <div class="three">
 
                 <tr class="companyName">
@@ -200,7 +276,7 @@
             </div>
 
 
-            <!-- ---- company No. 4 is four ----- -->
+            ---- company No. 4 is four -----
             <div class="four">
 
                 <tr class="companyName">
@@ -251,7 +327,26 @@
         </tbody>
 
         
+    </table>  -->
+
+
+    <!-- <table id="table2">
+
+
     </table>
+
+    <table id="table3">
+
+
+
+    </table>
+
+    <table id="table4">
+
+
+
+    </table> -->
+
 
     <script src="app.js"></script>
 </body>
