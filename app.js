@@ -14,6 +14,7 @@ var companies = [
                pName : "Samsung Galaxy S23 Ultra",
                pPrice : 95000,
                pSellQuantity : 312,
+               pRevenue : 0, // object ki keys ko reassign kr sakty hn, obj k bahir
             //    p1TotalRevenue : companies[0].comp3Prods[0].p1Price * companies[0].comp3Prods[0].p1SellQuantity,
             // yehn pr access hona possible nhe h, obj k bahir ho sakta h
 
@@ -24,6 +25,7 @@ var companies = [
                pName : "Samsung Galaxy Tab S9",
                pPrice : 86000,
                pSellQuantity : 95,
+               pRevenue : 0,
             //    p2TotalRevenue : 50000 * 15,
 
             },
@@ -33,11 +35,14 @@ var companies = [
                pName : "Samsung Galaxy Watch5",
                pPrice : 54000,
                pSellQuantity : 40,
+               pRevenue : 0,
             //    p3TotalRevenue : 50000 * 15,
 
             },
 
         ],
+
+      //  compRevenue : [],
 
         // comp4TotalRevenue : comp4Prods[0].p1TotalRevenue +  comp4Prods[1].p2TotalRevenue +  comp4Prods[2].p2TotalRevenue; 
         // YE BHI OBJ K BAHR ACCESS HO SAKTA H
@@ -56,6 +61,7 @@ var companies = [
                pName : "Vivo X80 Pro",
                pPrice : 89000,
                pSellQuantity : 71, 
+               pRevenue : 0,
 
             },
 
@@ -64,6 +70,7 @@ var companies = [
                pName : "Vivo Y21",
                pPrice : 11000,
                pSellQuantity : 23,
+               pRevenue : 0,
 
             },
 
@@ -72,6 +79,7 @@ var companies = [
                pName : "Vivo TWS 2 Earbuds",
                pPrice : 5000,
                pSellQuantity : 210,
+               pRevenue : 0,
 
             },
         ],
@@ -91,6 +99,7 @@ var companies = [
                pName : "Tecno Camon 20 Premier",
                pPrice : 25000,
                pSellQuantity : 32,
+               pRevenue : 0,
 
             },
 
@@ -99,6 +108,7 @@ var companies = [
                pName : "Tecno Spark 9 Pro",
                pPrice : 36000,
                pSellQuantity : 66,
+               pRevenue : 0,
 
             },
 
@@ -107,9 +117,12 @@ var companies = [
                pName : "Tecno Pova 5G",
                pPrice : 34000,
                pSellQuantity : 24,
+               pRevenue : 0,
 
             },
         ],
+
+      //  compRevenue : [],
 
 
     },
@@ -125,6 +138,7 @@ var companies = [
                pName : "Oppo Find X5 Pro",
                pPrice : 19000,
                pSellQuantity : 80,
+               pRevenue : 0,
                // obj k bahi product store krwa sakty hn (valid relation de kr) 
 
             },
@@ -134,6 +148,7 @@ var companies = [
                pName : "Oppo Reno 8 Pro",
                pPrice : 29999,
                pSellQuantity : 110,
+               pRevenue : 0,
 
             },
 
@@ -142,9 +157,12 @@ var companies = [
                pName : "Oppo A96",
                pPrice : 40500,
                pSellQuantity : 52,
+               pRevenue : 0,
 
             },
         ],
+
+    //    compRevenue : [],
 
 
     },
@@ -160,6 +178,9 @@ for ( var i = 0; i < companies.length; i++ ) { // 0 < 4 | run 4 times
 
    for ( var j = 0; j < companies[i].compProds.length; j++) {  // 0 < 3 | run 3 times
 
+      companies[i].compProds[j].pRevenue = companies[i].compProds[j].pPrice * companies[i].compProds[j].pSellQuantity;
+
+
       sectionsi.innerHTML += `
 
       <tr>
@@ -168,20 +189,61 @@ for ( var i = 0; i < companies.length; i++ ) { // 0 < 4 | run 4 times
           <td>${companies[i].compProds[j].pName}</td>
           <td>${companies[i].compProds[j].pPrice}</td>
           <td>${companies[i].compProds[j].pSellQuantity}</td>
-          <td>${companies[i].compProds[j].pPrice * companies[i].compProds[j].pSellQuantity}</td>
+          <td>${companies[i].compProds[j].pRevenue}</td>
 
       </tr>
+         `;
 
-      
-      `
+      if( j == companies[i].compProds.length-1) {
+
+         sectionsi.innerHTML += `
+         
+      <tr class="tr">
+         <td colspan="4" >The Total Revenue generate by <b>${companies[i].compName}</b> </td>
+         <td>${companies[i].compProds[0].pRevenue +
+               companies[i].compProds[1].pRevenue +
+               companies[i].compProds[2].pRevenue}</td>
+      </tr>
+         `
+         
+      }   
+     
+
+      }
    }
 
+   console.log(companies);
 
 
-}
 
 
+     
+// tr class="tr">
+//    <td colspan="4" >The Total Revenue generate by <b>${companies[i].compName}</b></td>
+//    <td>${(companies[i].compProds[0].pPrice * companies[i].compProds[0].pSellQuantity) + (companies[i].compProds[1].    pPrice * companies[i].compProds[1].pSellQuantity) + (companies[i].compProds[2].pPrice * companies[i].compProds[2].pSellQuantity)}</td>
+// </tr>
+      // ${
+         
+      // if ( j == companies[i].compProds.length-1) {
 
+                 
+
+      //    <tr>
+
+
+      //      <td>The total Revebue generate by Company</td>
+           
+      //      <td>
+      //      ${(companies[i].compProds[0].pPrice * companies[i].compProds[0].pSellQuantity) +
+      //            (companies[i].compProds[1].pPrice * companies[i].compProds[1].pSellQuantity) +
+      //            (companies[i].compProds[2].pPrice * companies[i].compProds[2].pSellQuantity) }
+                 
+      //      </td>
+         
+      //    </tr>
+
+
+   //}
 // --------- COMPANIES ARRAY ----------
 // var companies = [
 
